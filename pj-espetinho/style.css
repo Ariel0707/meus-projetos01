@@ -1,0 +1,166 @@
+@charset  "UTF-8";
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #3c1518;
+}
+
+
+.logo{
+     position: relative;
+    display: inline-block;
+    text-align: center;
+
+}.logo img{
+    width: 100%;
+    height: 100%;
+    margin-bottom: -20px;
+    margin-top: 5px;
+    margin-left: 0px;
+}
+.cardapio{
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-bottom: 20px;
+    padding: 10px;
+    background-color: #9e643c;
+    border-radius: 12px;
+}
+.cd{
+    background-color: #7a3520;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 12px;
+    position: absolute;
+    top: 295%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+input.botao {
+    background-color: #7a3520;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 12px;
+    position: absolute;
+    top: 95%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+input[type="button"]:hover{
+        margin-top: 3px;
+
+        background-color:  #c4451e ; 
+        color: rgb(251, 251, 248);
+        cursor: pointer;
+    
+}
+h1{
+    text-align: center;
+    color: white;
+} 
+
+h2{
+    text-align: center;
+    color: white;
+}
+
+p{
+    color: rgb(214, 211, 211);
+
+}
+p> a{
+     width: 80px;
+    height: 70px;
+    border-radius: 50%;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+}
+ul{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #674035;
+    border-radius: 12px;
+    
+}
+li {
+    padding: 14px 16px;
+    border-bottom:1px solid #070707;
+    color:#050505;
+
+}
+li span{
+    float: right;
+    color: #fbfbfb;
+    font-weight: bold;
+}
+img { 
+    margin-left: 39px;
+    width: 70%;
+    height: auto;
+    margin-bottom: 5px;
+
+}
+
+
+
+footer {
+    background-color: #02020b;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+    margin-top: 20px;
+}
+
+.zap{
+    width: 50px;
+    height: 50px;
+    margin-left: 10px;
+}
+@media  screen   and (min-width: 768px) {
+    img.logo22{
+        height: 70%;
+        width: 70%;
+        
+    
+    }
+    .cardapio{
+    margin-left: 200px;
+    margin-right: 200px;
+    }
+
+    }
+    h2{
+    margin-top: 4em;
+    }
+   img{
+    width: 100%;
+    margin-bottom: 0.5em;
+    border-radius: 10px;
+}
+.galeria{
+    margin: 0.5em;
+    columns: 200px;
+    column-gap: 1em;
+
+}
+
+
