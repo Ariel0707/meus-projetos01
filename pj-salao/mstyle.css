@@ -1,0 +1,55 @@
+@charset "UTF-8";
+
+
+
+
+ @media screen and (min-width: 768px) and (max-width: 992px) {
+
+    body {
+        background-image:linear-gradient(to top,rgb(231, 135, 135) );  
+        
+        
+    }
+    
+    
+    
+    img{
+        margin-left: 10%;
+        width: 45%;
+        height: 45%;
+    }
+    .cimg{
+      margin-left: 1%;
+        width: 60%;
+        height: 60%;
+        
+    }
+}
+
+@media screen and (min-width: 993px) and (max-width: 1500px) {
+
+    body {
+        background-image:linear-gradient(to top,rgb(231, 135, 135) );  
+         
+        
+    }
+     img{
+        margin-left: 26%;
+        width: 50%;
+        height: 50%;
+    }
+    .cimg{
+      margin-left: 2%;
+        width: 500px;
+        height: 500px;
+    }
+    input{
+        margin-left: 45%;
+    }
+}   
+   
+    
+
+
+        
+    
