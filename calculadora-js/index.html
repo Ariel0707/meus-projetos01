@@ -8,7 +8,7 @@
 </head>
 <body>
     <!--tela-->
-    <div class="calculadora">
+    <div class="calculadora" id="display">
         <div class="tela-calculadora">
             <div class="small" id="hitory">&nbsp;</div>
             <div class="large" id="output">0 </div>
@@ -16,30 +16,32 @@
 
         <!--botoes-->
         <div class="botoes">
-            <button class="btn">C</button>
-            <button class="btn" >&#9003;</button>
-            <button class="btn" >%</button>
-            <button class="btn operador">&#247;</button>
+            <button class="btn" data-action="limpar">C</button>
+            <button class="btn" data-action="apaga">&#9003;</button>
+            <button class="btn" data-action="porcentagem">%</button>
+            <button class="btn-operador" data-action="op">&#247;</button>
 
             <button data-num="7">7</button>
             <button data-num="8">8</button>
             <button data-num="9">9</button>
-            <button class="btn operador">&#215;</button>
+            <button class="btn-operador"data-action="op" >&#215;</button>
 
             <button data-num="4">4</button>
             <button data-num="5">5</button>
             <button data-num="6">6</button>
-            <button class="btn operador">-</button>
+            <button class="btn-operador" data-action="op">-</button>
 
             <button data-num="1">1</button>
             <button data-num="2">2</button>
             <button data-num="3">3</button>
-            <button class="btn operador">+</button>
+            <button class="btn-operador" data-action="op">+</button>
 
             <button data-num="0">0</button>
             <button class="btn ponto">.</button>
-            <button class="btn igual">=</button>
+            <button class="btnigual" data-action="igual">=</button>
         </div>
     </div>
+     
+    <script src="calculadora.js"></script>
 </body>
 </html>

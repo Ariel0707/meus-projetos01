@@ -57,8 +57,63 @@ body {
     
 }
 .large{
-    font-size: 32px;
+    font-size: 1.6rem;
     text-align: right;
     color: #e6eef6;
-    font-weight: 500;
+    font-weight: bold;
+    letter-spacing: 0.6px;
+    word-wrap: break-word;
+
 }
+.botoes{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+}
+button{
+    padding: 20px;
+    font-size: 18px;
+    border: none;
+    border-radius: 8px;
+    background: var(--cor-texto);
+    color: var(--cor-fundo);
+    font-weight: 600;
+    box-shadow: 0 4px 0px #FFA500,
+    inset 0 -4px 0px #FFA500;
+    cursor: pointer;
+    transition: background 0.3s, box-shadow 0.1s, transform 0.1s;
+}
+button:active{
+    box-shadow: 0 2px 0px #a7720e,
+    inset 0 -2px 0px #a7720e;
+    transform: translateY(2px);
+}
+.btn-operador{
+    background-color: var(--cor-botao);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+.btn-operador:hover{
+    background: var(--cor-fundo);
+    color: var(--cor-texto);
+}
+.btnigual{
+    background-color: var(--cor-botao);
+    grid-column: span 2;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+.btnigual:hover{
+    background: var(--cor-fundo);
+    color: var(--cor-texto);
+}
+.btn {
+    background-color: var(--cor-tela);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+.btn:hover{
+    background: var(--cor-fundo);
+    color: var(--cor-texto);
+}
+button:hover{
+    background: var(--cor-tela);
+}
+
