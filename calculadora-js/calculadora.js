@@ -80,20 +80,19 @@
             return;
         }
             const action = t.getAttribute('data-action');
-            if (action === 'clear') {
+            if (action === 'limpar') {
                 clearAll();
                 update();
                 return;
             }
-                if (action === 'back') {
+                if (action === 'apaga') {
                     backspace();
                     update();
                     return;
                 }
                     
-                 if (action === 'percent') {
+                 if (action === 'porcentagem') {
                     chooseOP('%');
-                    update();
                     return;
                 }
                  if(action === 'op') {
@@ -107,8 +106,16 @@
                     return;
                 }  
 }    
-    window.addEventListener('keydown', (e) => {
-        if (e.key >= '0' && e.key <= '9' || e.key === '.') {
+    window.addEventListener ('keydown', (e) => {
+        if (e.key >= '0' && e.key <= '9') {
+            inputDigit(e.key);
+            update();
+            return;
+        }
+        
+        
+        
+        if (e.key === '.' || e.key === '.') {
             inputDigit(e.key);
             update();
             return;
@@ -130,11 +137,12 @@
             update();
             return;
         }
-        if (e.key === '+' || e.key === '-' || e.key === '*' || e.key === '/') {
-            chooseOP(e.key);
+        if ([ '+', '-', '*', '/' ].includes(e.key)) {
+            const map = {'+': '+', '-': '-', '*': 'x', '/': '/'};
+            chooseOP(map[e.key]);
             update();
             return;
         }
-    }')' ;
+    });
     update();
 });
