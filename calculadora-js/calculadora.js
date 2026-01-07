@@ -1,7 +1,7 @@
 (function () {
     const out = document.getElementById('output');
     const hist = document.getElementById('history');
-    const container = document.querySelector('.botoes');
+    const container = document.querySelector('.pad');
 
     let current = '0';
     let previous = null;
@@ -10,8 +10,9 @@
 
     function update() {
         out.textContent = current;
-        hist.textContent = previous ? `${previous} ${operation || ''}` : '';
-    }
+        hist.textContent = previous ? (previous+ (operation || '')) : '';
+        }
+    
         function inputDigit(d) {
             if (justEvaluated) {
                 current = d === '.' ? '0.' : d; justEvaluated = false; return;
@@ -21,9 +22,8 @@
                 current += '.';
                 return;
             }
-                if (current === '0') {
-                current = d; else 
-                current += d;
+            if (current === '0') {
+                current = d; current += d;
             }
         }
             function chooseOP(op) {
@@ -43,13 +43,13 @@
                 let result;
                 const prev = parseFloat(previous);
                 const curr = parseFloat(current);
-                if (isNaN(prev) || isNaN(curr)) return;
+                if (isNaN(a) || isNaN(b)) return;
                 let res;
                 switch (operation) {
-                    case '+': res = prev + curr; break;
-                    case '-': res = prev - curr; break;
-                    case '*': res = prev * curr; break;
-                    case '/': res = prev / curr; break;
+                    case '+': res = a + b; break;
+                    case '-': res = a - b; break;
+                    case '×': res = a * b; break;
+                    case '÷': res = a / b; break;
                     default: return;
                 }
                 current = String(res);
@@ -71,10 +71,10 @@
             } 
             current = current.length > 1 ? current.slice(0, -1) : '0';
         }
-    container.addEventListener('click', (e) => {
+    container.addEventListener('click', (e)=> {
         const t = e.target;
         if (!t.matches('button')) return;
-        if (t.classList.contains('data-number')) {
+        if (t.hasAttribute('data-num')) {
             inputDigit(t.textContent.trim());
             update();
             return;
@@ -96,16 +96,17 @@
                     return;
                 }
                  if(action === 'op') {
+                    chooseOP(t.textContent.trim());
                     compute();
                     update();
                     return;
                 }     
-                 if(action === 'equals') {
+                 if(action === 'igual') {
                     compute();
                     update();
                     return;
                 }  
-}    
+});    
     window.addEventListener ('keydown', (e) => {
         if (e.key >= '0' && e.key <= '9') {
             inputDigit(e.key);
@@ -138,11 +139,11 @@
             return;
         }
         if ([ '+', '-', '*', '/' ].includes(e.key)) {
-            const map = {'+': '+', '-': '-', '*': 'x', '/': '/'};
+            const map = {'+': '+', '-': '-', '*': '×', '/': '÷'};
             chooseOP(map[e.key]);
             update();
             return;
         }
     });
     update();
-});
+})();
