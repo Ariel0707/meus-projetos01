@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Highland Reserve | Delivery de Whisky</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Fontes Luxury -->
+    <link href="https://fonts.googleapis.com" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com">
+</head>
+<body>
+
+    <!-- Header Estilo Zé Delivery -->
+    <header class="navbar">
+        <div class="container nav-flex">
+            <div class="brand">
+                <h1>HIGHLAND <span>RESERVE</span></h1>
+            </div>
+            <div class="search-bar">
+                <input type="text" id="search" placeholder="Busque seu malte favorito..." onkeyup="App.search(this.value)">
+                <i class="fa-solid fa-magnifying-glass"></i>
+            </div>
+            <div class="cart-trigger" onclick="UI.toggleCart()">
+                <i class="fa-solid fa-bag-shopping"></i>
+                <span id="cart-counter" class="badge">0</span>
+            </div>
+        </div>
+    </header>
+
+    <!-- Filtros de Categoria -->
+    <nav class="categories">
+        <div class="container chip-group">
+            <button onclick="App.filter('Todes', this)" class="chip active">Todes</button>
+            <button onclick="App.filter('Single Malt', this)" class="chip">Single Malt</button>
+            <button onclick="App.filter('Blended', this)" class="chip">Blended</button>
+        </div>
+    </nav>
+
+    <main class="container">
+        <div id="product-grid" class="grid">
+            <!-- Renderizado dinamicamente via JS -->
+        </div>
+    </main>
+
+    <!-- Carrinho Lateral (Drawer) -->
+    <aside id="side-cart" class="drawer">
+        <div class="drawer-header">
+            <h3>Sua Sacola</h3>
+            <button onclick="UI.toggleCart()" class="close-btn">&times;</button>
+        </div>
+        <div id="cart-items" class="drawer-body"></div>
+        <div class="drawer-footer">
+            <div class="summary">
+                <span>Total:</span>
+                <span id="grand-total">R$ 0,00</span>
+            </div>
+            <button class="checkout-btn" onclick="App.checkout()">FECHAR PEDIDO</button>
+        </div>
+    </aside>
+
+    <script src="app.js"></script>
+</body>
+</html>

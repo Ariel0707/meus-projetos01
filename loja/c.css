@@ -1,0 +1,57 @@
+:root {
+    --gold: #c5a059;
+    --dark: #0a0a0a;
+    --card-bg: #141414;
+    --text: #e0e0e0;
+    --transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+body { background: var(--dark); color: var(--text); font-family: 'Inter', sans-serif; margin: 0; }
+
+.navbar { position: sticky; top: 0; background: var(--dark); border-bottom: 1px solid #222; padding: 15px 0; z-index: 100; }
+.nav-flex { display: flex; justify-content: space-between; align-items: center; }
+
+h1 { font-family: 'Cinzel', serif; letter-spacing: 2px; color: #fff; margin: 0; }
+h1 span { display: block; font-size: 0.7rem; color: var(--gold); letter-spacing: 5px; }
+
+/* Grid idêntico à imagem original */
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 25px; padding: 40px 0;
+}
+
+.product-card {
+    background: var(--card-bg);
+    border: 1px solid #222;
+    border-radius: 12px;
+    padding: 20px;
+    transition: var(--transition);
+}
+
+.product-card:hover {
+    border-color: var(--gold);
+    transform: translateY(-8px);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.8);
+}
+
+.product-card img {
+    width: 100%; height: 320px; object-fit: contain;
+    margin-bottom: 15px; filter: drop-shadow(0 10px 15px rgba(0,0,0,0.5));
+}
+
+.price { color: var(--gold); font-size: 1.4rem; font-weight: bold; margin: 10px 0; }
+
+.btn-add {
+    width: 100%; background: var(--gold); color: #000; border: none;
+    padding: 12px; font-weight: 800; cursor: pointer; border-radius: 4px;
+    text-transform: uppercase; transition: 0.3s;
+}
+
+/* Sidebar Estilo Zé Delivery */
+.drawer {
+    position: fixed; right: -400px; top: 0; width: 350px; height: 100%;
+    background: #111; z-index: 1000; transition: var(--transition);
+    padding: 25px; border-left: 1px solid var(--gold);
+}
+.drawer.active { right: 0; }
